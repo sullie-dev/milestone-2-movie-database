@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import SearchBar from "../components/SearchBar";
 
 const Home: NextPage = () => {
   return (
@@ -19,7 +20,9 @@ const Home: NextPage = () => {
       </Head>
       <body>
         <h1 id={styles.title}>Movie database - Milestone 2</h1>
-        <section>Search bar</section>
+        <section>
+          <SearchBar />
+        </section>
         <section>Search results</section>
         <footer>Footer</footer>
       </body>
