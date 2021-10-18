@@ -16,6 +16,12 @@ const Home: NextPage = () => {
           content="movies, movie database, movies tv shows"
         />
       </Head>
+      <body>
+        <h1>Movie database - Milestone 2</h1>
+        <section>Search bar</section>
+        <section>Search results</section>
+        <footer>Footer</footer>
+      </body>
     </div>
   );
 };
