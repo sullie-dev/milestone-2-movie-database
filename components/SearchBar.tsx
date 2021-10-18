@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "../styles/SearchBar.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 export default function SearchBar() {
   return (
@@ -8,7 +10,12 @@ export default function SearchBar() {
         className={styles.searchBar}
         placeholder="Search for your favoirte movie"
       ></input>
-      <button className={styles.searchButton}>Search icon</button>
+      <button className={styles.searchButton}>
+        <FontAwesomeIcon
+          className={styles.icon}
+          icon={faSearch}
+        ></FontAwesomeIcon>
+      </button>
     </div>
   );
 }
