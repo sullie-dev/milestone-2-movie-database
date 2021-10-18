@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         />
       </Head>
       <body>
-        <h1 id={styles.header}>Movie database - Milestone 2</h1>
+        <h1 id={styles.title}>Movie database - Milestone 2</h1>
         <section>Search bar</section>
         <section>Search results</section>
         <footer>Footer</footer>
