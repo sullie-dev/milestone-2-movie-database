@@ -4,6 +4,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import SearchBar from "../components/SearchBar";
 import axios from "axios";
+import MovieCard from "../components/MovieCard";
 
 interface iMovieProps {
   Title: string;
@@ -51,16 +52,13 @@ const Home: NextPage = () => {
         </section>
         <section>
           {response.map((res: iMovieProps) => (
-            <div>
-              <h1>{res.Title}</h1>
-              <h2>{res.Year}</h2>
-              <h4> {res.Type} </h4>
-              <br />
-              <img
-                src={res.Poster}
-                alt={res.Title + " theatrical poster"}
-              ></img>
-            </div>
+            <MovieCard
+              title={res.Title}
+              year={res.Year}
+              type={res.Type}
+              poster={res.Poster}
+              imdbID={res.imdbID}
+            />
           ))}
         </section>
         <footer>Footer</footer>
