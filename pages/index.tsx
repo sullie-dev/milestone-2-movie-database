@@ -50,9 +50,10 @@ const Home: NextPage = () => {
         <section>
           <SearchBar searchFunc={searchFunc} />
         </section>
-        <section>
+        <section id={styles.movieRes}>
           {response.map((res: iMovieProps) => (
             <MovieCard
+              // key={(res.Title, res.Year)}
               title={res.Title}
               year={res.Year}
               type={res.Type}
