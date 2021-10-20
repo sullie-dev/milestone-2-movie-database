@@ -1,12 +1,21 @@
 import type { NextPage } from "next";
+import React, { useState } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import SearchBar from "../components/SearchBar";
+import axios from "axios";
 
 const Home: NextPage = () => {
-  function searchFunc(searcTerm: string, event: any) {
+  const [response, setRessponse] = useState([]);
+
+  async function searchFunc(searchTerm: string, event: any) {
     event.preventDefault();
-    console.log(searcTerm);
+    const search: any = await axios.get(
+      `http://www.omdbapi.com/?apikey=a3a7a7fb&a3a7a7fb&s=${searchTerm}`,
+    );
+
+    setRessponse(search.data);
+    return setRessponse;
   }
   return (
     <div>
