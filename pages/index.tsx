@@ -5,8 +5,20 @@ import styles from "../styles/Home.module.css";
 import SearchBar from "../components/SearchBar";
 import axios from "axios";
 
+interface iMovieProps {
+  Title: string;
+  Type: string;
+  Year: string;
+  imdbID: String;
+  Poster: string;
+}
+
+interface responseProps {
+  movies: Array<iMovieProps>[];
+}
+
 const Home: NextPage = () => {
-  const [response, setRessponse] = useState([]);
+  const [response, setRessponse] = useState<any>([]);
 
   async function searchFunc(searchTerm: string, event: any) {
     event.preventDefault();
@@ -14,9 +26,10 @@ const Home: NextPage = () => {
       `http://www.omdbapi.com/?apikey=a3a7a7fb&a3a7a7fb&s=${searchTerm}`,
     );
 
-    setRessponse(search.data);
+    setRessponse(search.data["Search"]);
     return setRessponse;
   }
+  console.log(response);
   return (
     <div>
       <Head>
@@ -36,7 +49,20 @@ const Home: NextPage = () => {
         <section>
           <SearchBar searchFunc={searchFunc} />
         </section>
-        <section>Search results</section>
+        <section>
+          {response.map((res: iMovieProps) => (
+            <div>
+              <h1>{res.Title}</h1>
+              <h2>{res.Year}</h2>
+              <h4> {res.Type} </h4>
+              <br />
+              <img
+                src={res.Poster}
+                alt={res.Title + " theatrical poster"}
+              ></img>
+            </div>
+          ))}
+        </section>
         <footer>Footer</footer>
       </body>
     </div>
