@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styles from "../styles/SearchBar.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 interface IsearchProps {
-  searchTerm: string;
+  searchFunc: Function;
 }
 
-export default function SearchBar<IsearchProps>() {
+export default function SearchBar(props: IsearchProps) {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
@@ -15,15 +15,16 @@ export default function SearchBar<IsearchProps>() {
       <input
         className={styles.searchBar}
         placeholder="Search for your favoirte movie"
-        onChange={(event) => setSearchTerm(event.target.value)}
+        onChange={(event) => {
+          setSearchTerm(event.target.value);
+        }}
       ></input>
-      <button className={styles.searchButton}>
-        <FontAwesomeIcon
-          className={styles.icon}
-          icon={faSearch}
-          onClick={() => alert(searchTerm)}
-        ></FontAwesomeIcon>
-      </button>
+      <input
+        type="submit"
+        className={styles.searchButton}
+        onClick={(event) => props.searchFunc(searchTerm, event)}
+        value="Seach"
+      ></input>
     </div>
   );
 }

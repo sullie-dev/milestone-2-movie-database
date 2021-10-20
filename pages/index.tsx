@@ -4,6 +4,10 @@ import styles from "../styles/Home.module.css";
 import SearchBar from "../components/SearchBar";
 
 const Home: NextPage = () => {
+  function searchFunc(searcTerm: string, event: any) {
+    event.preventDefault();
+    console.log(searcTerm);
+  }
   return (
     <div>
       <Head>
@@ -21,7 +25,7 @@ const Home: NextPage = () => {
       <body>
         <h1 id={styles.title}>Movie database - Milestone 2</h1>
         <section>
-          <SearchBar />
+          <SearchBar searchFunc={searchFunc} />
         </section>
         <section>Search results</section>
         <footer>Footer</footer>
