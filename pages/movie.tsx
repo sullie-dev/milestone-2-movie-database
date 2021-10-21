@@ -14,7 +14,7 @@ const Movie: NextPage = () => {
   useEffect(() => {
     async function fetchMovieData(movieID: MovieRef) {
       let res: any = await axios.get(
-        `http://www.omdbapi.com/?apikey=a3a7a7fb&a3a7a7fb&i=${movieID}`,
+        `https://www.omdbapi.com/?apikey=a3a7a7fb&a3a7a7fb&i=${movieID}`,
       );
       setMovie(res.data);
     }

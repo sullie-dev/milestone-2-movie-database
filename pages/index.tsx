@@ -24,7 +24,7 @@ const Home: NextPage = () => {
   async function searchFunc(searchTerm: string, event: any) {
     event.preventDefault();
     const search: any = await axios.get(
-      `http://www.omdbapi.com/?apikey=a3a7a7fb&a3a7a7fb&s=${searchTerm}`,
+      `https://www.omdbapi.com/?apikey=a3a7a7fb&a3a7a7fb&s=${searchTerm}`,
     );
 
     setRessponse(search.data["Search"]);
