@@ -10,7 +10,7 @@ interface iMovieProps {
   Title: string;
   Type: string;
   Year: string;
-  imdbID: String;
+  imdbID: string;
   Poster: string;
 }
 

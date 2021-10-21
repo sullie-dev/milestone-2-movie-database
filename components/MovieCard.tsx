@@ -1,16 +1,26 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "../styles/MovieCard.module.css";
 
 interface Props {
   title: string;
   type: string;
   year: string;
-  imdbID: String;
+  imdbID: string;
   poster: string;
 }
 
 export default function MovieCard(props: Props) {
+  const router = useRouter();
+  const handleClick = (id: string, e: any) => {
+    e.preventDefault();
+    router.push({
+      pathname: "/movie",
+      query: { id },
+    });
+  };
+
   return (
     <div className={styles.container}>
       <img
@@ -23,8 +33,11 @@ export default function MovieCard(props: Props) {
         This {props.type} was released {props.year}
       </h3>
       <br />
-      <Link href={"https://www.imdb.com/title/" + props.imdbID}>
-        <a className={styles.button} target="_blank">
+      <Link href={`/movie`}>
+        <a
+          className={styles.button}
+          onClick={(event) => handleClick(props.imdbID, event)}
+        >
           View more
         </a>
       </Link>
