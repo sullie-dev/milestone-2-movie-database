@@ -50,7 +50,7 @@ const Home: NextPage = () => {
         <section>
           <SearchBar searchFunc={searchFunc} />
         </section>
-        <section id={styles.movieRes}>
+        <section className={styles.movieRes}>
           {response.map((res: iMovieProps) => (
             <MovieCard
               // key={(res.Title, res.Year)}
@@ -62,7 +62,7 @@ const Home: NextPage = () => {
             />
           ))}
         </section>
-        <footer>Footer</footer>
+        <footer id={styles.footer}>Footer</footer>
       </body>
     </div>
   );

@@ -7,7 +7,7 @@
 }
 
 .searchBar {
-  width: 70%;
+  width: 60%;
   height: 50px;
   border: 1px solid gray;
   border-radius: 15px 0 0 15px;
@@ -16,7 +16,7 @@
 }
 
 .searchButton {
-  width: 10%;
+  width: 30%;
   height: 80px;
   font-size: large;
   border-radius: 0 15px 15px 0;
@@ -24,4 +24,13 @@
 
 .icon {
   font-size: larger;
+}
+
+@media screen and (min-width: 768px) {
+  .searchBar {
+    width: 70%;
+  }
+  .searchButton {
+    width: 10%;
+  }
 }
