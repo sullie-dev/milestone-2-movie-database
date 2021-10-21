@@ -26,6 +26,7 @@
   font-size: larger;
 }
 
+/* Desktops */
 @media screen and (min-width: 768px) {
   .searchBar {
     width: 70%;
