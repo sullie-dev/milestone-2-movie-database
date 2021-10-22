@@ -26,9 +26,6 @@ const Movie: NextPage = () => {
   console.log(movie);
   return (
     <div className={styles.container}>
-      <a className={styles.back} onClick={() => router.back()}>
-        Go back
-      </a>
       <section>
         <img
           className={styles.poster}
@@ -53,6 +50,10 @@ const Movie: NextPage = () => {
             View on IMBD
           </a>
         </Link>
+        <br></br>
+        <a className={styles.button} onClick={() => router.back()}>
+          Back to seach
+        </a>
       </section>
     </div>
   );
