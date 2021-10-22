@@ -44,7 +44,7 @@ const Home: NextPage = () => {
           content="movies, movie database, movies tv shows"
         />
       </Head>
-      <body>
+      <main>
         <h1 id={styles.title}>Movie database - Milestone 2</h1>
         <section>
           <SearchBar searchFunc={searchFunc} />
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
         <section className={styles.movieRes}>
           {response.map((res: iMovieProps) => (
             <MovieCard
-              // key={(res.Title, res.Year)}
+              key={(res.Title, res.Year)}
               title={res.Title}
               year={res.Year}
               type={res.Type}
@@ -61,7 +61,7 @@ const Home: NextPage = () => {
             />
           ))}
         </section>
-      </body>
+      </main>
     </div>
   );
 };

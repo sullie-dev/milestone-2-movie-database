@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import { NextPage } from "next";
 import Link from "next/link";
 
 import { useRouter } from "next/router";
@@ -30,7 +30,7 @@ const Movie: NextPage = () => {
           className={styles.poster}
           src={movie["Poster" as any]}
           alt={movie["Title" as any] + " theatrical poster"}
-        ></img>
+        />
       </section>
       <section className={styles.movieInfo}>
         <h1>{movie["Title" as any]}</h1>
