@@ -30,7 +30,6 @@ const Home: NextPage = () => {
     setRessponse(search.data["Search"]);
     return setRessponse;
   }
-  console.log(response);
   return (
     <div>
       <Head>
