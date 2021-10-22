@@ -23,7 +23,6 @@ const Movie: NextPage = () => {
     }
     fetchMovieData(router.query.id as any);
   }, []);
-  console.log(movie);
   return (
     <div className={styles.container}>
       <section>
