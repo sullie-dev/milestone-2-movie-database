@@ -61,7 +61,6 @@ const Home: NextPage = () => {
             />
           ))}
         </section>
-        <footer id={styles.footer}>Footer</footer>
       </body>
     </div>
   );
